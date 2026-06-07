@@ -1,0 +1,588 @@
+!DOCTYPE html
+html lang=en class=scroll-smooth
+head
+    meta charset=UTF-8
+    meta name=viewport content=width=device-width, initial-scale=1.0
+    titleBabak Bayatani AI  AI-Powered Growth Systemstitle
+    script src=httpscdn.tailwindcss.comscript
+    script src=httpscdn.jsdelivr.netnpmchart.jsscript
+    style
+        @import url('httpsfonts.googleapis.comcss2family=Plus+Jakarta+Sanswght@300;400;500;600;700&family=JetBrains+Monowght@400;500&display=swap');
+        
+        root {
+            --brand-primary #0f172a;
+            --brand-accent #b45309;
+            --bg-neutral #fdfcfb;
+        }
+
+        body {
+            font-family 'Plus Jakarta Sans', sans-serif;
+            background-color var(--bg-neutral);
+            color #1e293b;
+        }
+
+        .mono { font-family 'JetBrains Mono', monospace; }
+
+        .chart-container {
+            position relative;
+            width 100%;
+            max-width 650px;
+            margin-left auto;
+            margin-right auto;
+            height 320px;
+            max-height 400px;
+        }
+
+        .glass-nav {
+            background rgba(253, 252, 251, 0.8);
+            backdrop-filter blur(12px);
+            border-bottom 1px solid rgba(226, 232, 240, 0.5);
+        }
+
+        .card-interaction {
+            transition all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-interactionhover {
+            transform translateY(-4px);
+            box-shadow 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+        }
+
+        .service-active {
+            border-color var(--brand-accent);
+            background-color #fffbeb;
+        }
+
+         Custom range slider styling 
+        input[type=range] {
+            -webkit-appearance none;
+            width 100%;
+            background transparent;
+        }
+        input[type=range]-webkit-slider-runnable-track {
+            width 100%;
+            height 6px;
+            background #e2e8f0;
+            border-radius 3px;
+        }
+        input[type=range]-webkit-slider-thumb {
+            -webkit-appearance none;
+            height 20px;
+            width 20px;
+            border-radius 50%;
+            background var(--brand-accent);
+            cursor pointer;
+            margin-top -7px;
+        }
+    style
+head
+body
+
+!-- Navigation Bar --
+nav class=fixed top-0 w-full z-50 glass-nav
+    div class=max-w-7xl mx-auto px-6 h-18 py-4 flex items-center justify-between
+        div class=flex items-center space-x-2
+            div class=w-8 h-8 bg-slate-900 rounded flex items-center justify-center text-white font-bold text-xsBBdiv
+            span class=font-bold text-lg tracking-tight uppercaseBabak Bayatani span class=text-amber-700AIspanspan
+        div
+        div class=hidden mdflex space-x-8 text-sm font-semibold text-slate-600 items-center
+            a href=#services class=hovertext-amber-700 transition-colorsServicesa
+            a href=#case-studies class=hovertext-amber-700 transition-colorsResultsa
+            a href=#about class=hovertext-amber-700 transition-colorsAbouta
+            a href=#contact class=bg-slate-900 text-white px-5 py-2 rounded-full hoverbg-slate-800 transition-allFree Strategy Calla
+        div
+    div
+nav
+
+main
+    !-- HERO SECTION --
+    section class=pt-32 pb-20 px-6
+        div class=max-w-5xl mx-auto text-center
+            div class=inline-flex items-center space-x-2 px-3 py-1 bg-amber-50 border border-amber-100 rounded-full text-amber-800 text-xs font-bold mb-8 uppercase tracking-widest
+                span✦span spanBoutique AI Growth Agencyspan
+            div
+            h1 class=text-5xl mdtext-7xl font-bold text-slate-900 mb-8 leading-[1.1] tracking-tight
+                AI-Powered Marketing & Sales Systems That span class=text-amber-700 italicGrow Your Business.span
+            h1
+            p class=text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed
+                We help local businesses, agencies, and e-commerce brands generate more leads, automate follow-ups, and increase sales using custom AI-driven systems.
+            p
+            div class=flex flex-col smflex-row justify-center gap-4
+                a href=#contact class=bg-slate-900 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl shadow-slate-200 hoverscale-105 transition-transform
+                    Book Free Strategy Call
+                a
+                a href=#case-studies class=bg-white border border-slate-200 text-slate-900 px-8 py-4 rounded-xl font-bold text-lg hoverbg-slate-50 transition-all
+                    See Results
+                a
+            div
+        div
+    section
+
+    !-- TRUST BAR --
+    section class=border-y border-slate-100 bg-white py-12
+        div class=max-w-7xl mx-auto px-6
+            div class=grid grid-cols-2 mdgrid-cols-4 gap-8 text-center
+                div
+                    div class=text-3xl font-bold text-slate-900 mb-150+div
+                    div class=text-xs font-bold text-slate-400 uppercase tracking-widestAI Solutions Builtdiv
+                div
+                div
+                    div class=text-3xl font-bold text-slate-900 mb-110k+div
+                    div class=text-xs font-bold text-slate-400 uppercase tracking-widestLeads Generateddiv
+                div
+                div
+                    div class=text-3xl font-bold text-slate-900 mb-1247div
+                    div class=text-xs font-bold text-slate-400 uppercase tracking-widestSales Automationdiv
+                div
+                div
+                    div class=text-3xl font-bold text-slate-900 mb-190%div
+                    div class=text-xs font-bold text-slate-400 uppercase tracking-widestManual Work Reduceddiv
+                div
+            div
+        div
+    section
+
+    !-- SECTION 1 GROWTH VISUALIZER --
+    section id=impact class=py-24 bg-slate-50
+        div class=max-w-7xl mx-auto px-6
+            div class=grid lggrid-cols-2 gap-16 items-center
+                div
+                    h2 class=text-3xl font-bold mb-6The AI Advantageh2
+                    p class=text-slate-600 mb-8 leading-relaxed
+                        Traditional marketing systems rely on manual effort and inconsistent follow-ups. Our AI-driven approach creates a compounding growth curve by automating lead qualification and response times.
+                    p
+                    div class=space-y-6
+                        div class=flex items-start space-x-4
+                            div class=w-10 h-10 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center shrink-0⚡div
+                            div
+                                h4 class=font-bold text-slate-900Instant Responseh4
+                                p class=text-sm text-slate-500AI replies to leads in seconds, not hours, increasing conversion rates by up to 391%.p
+                            div
+                        div
+                        div class=flex items-start space-x-4
+                            div class=w-10 h-10 rounded-lg bg-slate-200 text-slate-700 flex items-center justify-center shrink-0📈div
+                            div
+                                h4 class=font-bold text-slate-900Scalable Outreachh4
+                                p class=text-sm text-slate-500Handle 1,000+ leads with the same overhead as 10 leads.p
+                            div
+                        div
+                    div
+                div
+                div class=bg-white p-8 rounded-3xl shadow-sm border border-slate-100
+                    div class=flex justify-between items-center mb-6
+                        h3 class=font-bold text-sm uppercase tracking-widest text-slate-400Projected Efficiencyh3
+                        div class=flex space-x-2
+                            button onclick=updateGrowthChart('manual') class=px-3 py-1 text-xs font-bold rounded-full bg-slate-100 text-slate-600Manualbutton
+                            button onclick=updateGrowthChart('ai') class=px-3 py-1 text-xs font-bold rounded-full bg-amber-700 text-whiteAI-Systembutton
+                        div
+                    div
+                    div class=chart-container
+                        canvas id=growthChartcanvas
+                    div
+                div
+            div
+        div
+    section
+
+    !-- SECTION 2 SERVICE MATRIX --
+    section id=services class=py-24 bg-white
+        div class=max-w-7xl mx-auto px-6
+            div class=text-center mb-16
+                h2 class=text-4xl font-bold mb-4Our Systemsh2
+                p class=text-slate-500 max-w-2xl mx-autoClick a system below to see specific deliverables and investment tiers.p
+            div
+            
+            div class=grid mdgrid-cols-4 gap-4 mb-12
+                button onclick=selectService(0) class=service-btn p-6 rounded-2xl border-2 border-slate-100 text-left transition-all service-active id=btn-0
+                    div class=text-2xl mb-2🎯div
+                    div class=font-boldLead Gendiv
+                button
+                button onclick=selectService(1) class=service-btn p-6 rounded-2xl border-2 border-slate-100 text-left transition-all id=btn-1
+                    div class=text-2xl mb-2🤝div
+                    div class=font-boldSales Assistantdiv
+                button
+                button onclick=selectService(2) class=service-btn p-6 rounded-2xl border-2 border-slate-100 text-left transition-all id=btn-2
+                    div class=text-2xl mb-2💬div
+                    div class=font-boldAI Chatbotsdiv
+                button
+                button onclick=selectService(3) class=service-btn p-6 rounded-2xl border-2 border-slate-100 text-left transition-all id=btn-3
+                    div class=text-2xl mb-2📢div
+                    div class=font-boldMarketing Autodiv
+                button
+            div
+
+            div class=bg-slate-50 rounded-3xl p-8 mdp-12 border border-slate-100 id=service-display
+                !-- Content Injected via JS --
+            div
+        div
+    section
+
+    !-- SECTION 3 ROI CALCULATOR --
+    section class=py-24 bg-slate-900 text-white overflow-hidden relative
+        div class=absolute top-0 right-0 w-13 h-full bg-amber-70010 blur-[120px]div
+        div class=max-w-7xl mx-auto px-6 relative z-10
+            div class=grid lggrid-cols-2 gap-16 items-center
+                div
+                    h2 class=text-4xl font-bold mb-6Calculate Your AI ROIh2
+                    p class=text-slate-400 mb-10 leading-relaxed
+                        See how much manual labor you can offset and how many additional leads you can capture by implementing our automated systems.
+                    p
+                    div class=space-y-8
+                        div
+                            div class=flex justify-between mb-4
+                                label class=text-sm font-bold uppercase tracking-widest text-slate-500Monthly Leadslabel
+                                span class=text-amber-500 font-mono id=lead-val100span
+                            div
+                            input type=range id=leads-input min=10 max=1000 value=100 class=w-full oninput=calculateROI()
+                        div
+                        div
+                            div class=flex justify-between mb-4
+                                label class=text-sm font-bold uppercase tracking-widest text-slate-500Avg Lead Value ($)label
+                                span class=text-amber-500 font-mono id=value-val500span
+                            div
+                            input type=range id=value-input min=100 max=5000 value=500 step=100 class=w-full oninput=calculateROI()
+                        div
+                    div
+                div
+                div class=grid grid-cols-1 smgrid-cols-2 gap-4
+                    div class=bg-white5 border border-white10 p-8 rounded-3xl backdrop-blur-md
+                        div class=text-slate-500 text-xs font-bold uppercase mb-4Annual Time Saveddiv
+                        div class=text-4xl font-bold text-white mb-2 id=roi-hours420div
+                        div class=text-xs text-slate-400Hours of manual follow-updiv
+                    div
+                    div class=bg-amber-700 p-8 rounded-3xl shadow-2xl shadow-amber-90020
+                        div class=text-amber-100 text-xs font-bold uppercase mb-4Revenue Growth Pot.div
+                        div class=text-4xl font-bold text-white mb-2 id=roi-revenue$12kdiv
+                        div class=text-xs text-amber-10070From improved response timediv
+                    div
+                div
+            div
+        div
+    section
+
+    !-- SECTION 4 CASE STUDIES --
+    section id=case-studies class=py-24 bg-white
+        div class=max-w-7xl mx-auto px-6
+            h2 class=text-3xl font-bold mb-12Recent Success Storiesh2
+            div class=grid mdgrid-cols-3 gap-8
+                div class=card-interaction bg-slate-50 border border-slate-100 p-8 rounded-3xl
+                    div class=text-xs font-bold text-amber-700 uppercase mb-4 tracking-widestReal Estatediv
+                    h3 class=text-xl font-bold mb-4 italicResponse time from hours to seconds.h3
+                    p class=text-slate-500 text-sm mb-6Built an AI Assistant for qualification and booking.p
+                    div class=pt-6 border-t border-slate-200
+                        div class=text-2xl font-bold text-slate-9004xdiv
+                        div class=text-xs text-slate-400 uppercaseBooking Rate Increasediv
+                    div
+                div
+                div class=card-interaction bg-slate-50 border border-slate-100 p-8 rounded-3xl
+                    div class=text-xs font-bold text-amber-700 uppercase mb-4 tracking-widestE-Commercediv
+                    h3 class=text-xl font-bold mb-4 italic247 Cart Recovery.h3
+                    p class=text-slate-500 text-sm mb-6AI-driven personalized follow-up sequences.p
+                    div class=pt-6 border-t border-slate-200
+                        div class=text-2xl font-bold text-slate-90022%div
+                        div class=text-xs text-slate-400 uppercaseRecovery Improvementdiv
+                    div
+                div
+                div class=card-interaction bg-slate-50 border border-slate-100 p-8 rounded-3xl
+                    div class=text-xs font-bold text-amber-700 uppercase mb-4 tracking-widestLocal B2Bdiv
+                    h3 class=text-xl font-bold mb-4 italicAutomated Prospecting.h3
+                    p class=text-slate-500 text-sm mb-6Custom lead scrapers and AI outreach flows.p
+                    div class=pt-6 border-t border-slate-200
+                        div class=text-2xl font-bold text-slate-900150+div
+                        div class=text-xs text-slate-400 uppercaseQualified LeadsModiv
+                    div
+                div
+            div
+        div
+    section
+
+    !-- SECTION 5 ABOUT FOUNDER --
+    section id=about class=py-24 bg-slate-50
+        div class=max-w-5xl mx-auto px-6
+            div class=flex flex-col mdflex-row items-center gap-12
+                div class=w-48 h-48 mdw-64 mdh-64 rounded-full shrink-0 flex items-center justify-center border-4 border-white shadow-xl overflow-hidden relative group bg-gradient-to-tr from-slate-800 to-slate-950
+                    !-- Configured high-fidelity portrait with automatic fallback handling --
+                    img 
+                        src=photo_2026-05-30_23-06-17.jpg 
+                        alt=Babak Bayatani 
+                        class=w-full h-full object-cover transition-transform duration-500 group-hoverscale-105
+                        onerror=this.style.display='none'; document.getElementById('avatar-placeholder').classList.remove('hidden');
+                    
+                    !-- Ultra premium fallback state so the preview looks beautifully polished before the GitHub upload --
+                    div id=avatar-placeholder class=hidden absolute inset-0 flex flex-col items-center justify-center text-white p-4
+                        span class=text-4xl font-bold tracking-tight mb-1BBspan
+                        span class=text-[9px] uppercase tracking-widest text-amber-500 font-semiboldFounderspan
+                    div
+                div
+                div
+                    h2 class=text-3xl font-bold mb-4Meet Babak Bayatanih2
+                    p class=text-lg text-slate-700 mb-6 font-medium leading-relaxed font-semibold
+                        Founder of Babak Bayatani AI. I help businesses implement practical AI solutions that improve marketing, sales, and customer engagement.
+                    p
+                    p class=text-slate-500 mb-8 text-sm leading-relaxed
+                        My approach isn't about shiny objects. It's about revenue. We look for the friction in your sales cycle—slow responses, missed follow-ups, manual data entry—and replace it with scalable machine intelligence.
+                    p
+                    div class=flex flex-wrap gap-4
+                        div class=p-4 bg-white rounded-xl border border-slate-200 flex-1 min-w-[140px]
+                            div class=text-xs text-slate-400 uppercase font-bold mb-1Email Mediv
+                            a href=mailtobbayatani@gmail.com class=font-bold text-slate-900 hovertext-amber-700 transition-colors text-sm break-allbbayatani@gmail.coma
+                        div
+                        div class=p-4 bg-white rounded-xl border border-slate-200 flex-1 min-w-[140px]
+                            div class=text-xs text-slate-400 uppercase font-bold mb-1CallWhatsAppdiv
+                            a href=tel+989198929660 class=font-bold text-slate-900 hovertext-amber-700 transition-colors text-sm whitespace-nowrap+98 919 892 9660a
+                        div
+                    div
+                div
+            div
+        div
+    section
+
+    !-- FINAL CONTACT SECTION --
+    section id=contact class=py-24 bg-white relative
+        div class=max-w-4xl mx-auto px-6 text-center
+            h2 class=text-4xl font-bold mb-6 italicReady to Grow with AIh2
+            p class=text-slate-500 mb-12Fill out the form below to book your free AI Strategy Session. We'll identify exactly where you're losing revenue and how to fix it.p
+            
+            div class=bg-slate-50 p-8 mdp-12 rounded-[2rem] border border-slate-100 text-left
+                form id=contactForm onsubmit=handleFormSubmit(event) class=grid mdgrid-cols-2 gap-6
+                    div class=space-y-2
+                        label class=text-xs font-bold uppercase tracking-widest text-slate-400 px-1Namelabel
+                        input type=text required class=w-full bg-white border border-slate-200 rounded-xl px-4 py-3 outline-none focusborder-amber-700 transition-colors
+                    div
+                    div class=space-y-2
+                        label class=text-xs font-bold uppercase tracking-widest text-slate-400 px-1Work Emaillabel
+                        input type=email required class=w-full bg-white border border-slate-200 rounded-xl px-4 py-3 outline-none focusborder-amber-700 transition-colors
+                    div
+                    div class=space-y-2
+                        label class=text-xs font-bold uppercase tracking-widest text-slate-400 px-1Business Typelabel
+                        select class=w-full bg-white border border-slate-200 rounded-xl px-4 py-3 outline-none focusborder-amber-700 transition-colors
+                            optionReal Estateoption
+                            optionE-Commerceoption
+                            optionCoachingSaaSoption
+                            optionLocal Service Businessoption
+                        select
+                    div
+                    div class=space-y-2
+                        label class=text-xs font-bold uppercase tracking-widest text-slate-400 px-1Monthly Revenuelabel
+                        select class=w-full bg-white border border-slate-200 rounded-xl px-4 py-3 outline-none focusborder-amber-700 transition-colors
+                            option$5k - $20koption
+                            option$20k - $100koption
+                            option$100k+option
+                        select
+                    div
+                    div class=mdcol-span-2 space-y-2
+                        label class=text-xs font-bold uppercase tracking-widest text-slate-400 px-1Biggest Bottlenecklabel
+                        textarea rows=3 class=w-full bg-white border border-slate-200 rounded-xl px-4 py-3 outline-none focusborder-amber-700 transition-colors placeholder=What is holding your growth backtextarea
+                    div
+                    div class=mdcol-span-2 pt-4
+                        button type=submit class=w-full bg-slate-900 text-white font-bold py-4 rounded-xl hoverbg-slate-800 transition-all shadow-lg shadow-slate-200
+                            Submit & Book Strategy Session
+                        button
+                    div
+                form
+
+                !-- Custom Modal Overlay replacing native alert() --
+                div id=successModal class=hidden fixed inset-0 bg-slate-90060 backdrop-blur-sm z-50 flex items-center justify-center p-4
+                    div class=bg-white rounded-3xl p-8 max-w-md w-full text-center shadow-2xl border border-slate-100
+                        div class=w-16 h-16 bg-emerald-100 text-emerald-800 rounded-full flex items-center justify-center text-3xl mx-auto mb-6✓div
+                        h3 class=text-2xl font-bold text-slate-900 mb-2Strategy Session Requested!h3
+                        p class=text-slate-500 mb-6Thank you, Babak has received your request and will reach out to you within 24 hours.p
+                        button onclick=closeModal() class=w-full bg-slate-900 text-white font-bold py-3 rounded-xl hoverbg-slate-800 transition-all
+                            Back to Portfolio
+                        button
+                    div
+                div
+            div
+        div
+    section
+main
+
+footer class=py-12 border-t border-slate-100 bg-white text-slate-500 text-sm
+    div class=max-w-7xl mx-auto px-6 flex flex-col mdflex-row justify-between items-center gap-8
+        div class=flex items-center space-x-2
+            div class=w-6 h-6 bg-slate-900 rounded flex items-center justify-center text-white font-bold text-[8px]BBdiv
+            span class=font-bold uppercase text-slate-900Babak Bayatani AIspan
+        div
+        div class=flex flex-col mdflex-row gap-6 text-center mdtext-left
+            div
+                span class=text-xs text-slate-400 block uppercase font-bold tracking-widest mb-1Direct Linespan
+                a href=tel+989198929660 class=hovertext-amber-700 transition-colors font-medium+98 919 892 9660a
+            div
+            div
+                span class=text-xs text-slate-400 block uppercase font-bold tracking-widest mb-1Inquiriesspan
+                a href=mailtobbayatani@gmail.com class=hovertext-amber-700 transition-colors font-mediumbbayatani@gmail.coma
+            div
+        div
+        p class=text-xs text-slate-400© 2026 Babak Bayatani AI. Boutique Revenue Systems.p
+    div
+footer
+
+script
+     --- Data Storage ---
+    const services = [
+        {
+            title AI Lead Generation Systems,
+            desc Generate qualified leads automatically through high-intent scraping and intelligent outreach.,
+            deliverables [Website lead capture, AI qualification, Automated outreach, CRM integration],
+            pricing Starting at $1,500+,
+            icon 🎯
+        },
+        {
+            title AI Sales Assistants,
+            desc A digital sales team that never sleeps, handles objections, and books meetings.,
+            deliverables [Lead nurturing, Appointment booking, Follow-up automation, CRM Sync],
+            pricing Starting at $2,000+,
+            icon 🤝
+        },
+        {
+            title AI Chatbots & Support,
+            desc 247 assistants for your website that answer FAQs and resolve support tickets.,
+            deliverables [Website assistant, FAQ automation, Knowledge base sync, Live-handover],
+            pricing Starting at $1,000+,
+            icon 💬
+        },
+        {
+            title AI Marketing Automation,
+            desc End-to-end content and campaign orchestration using generative intelligence.,
+            deliverables [Email campaigns, Content creation, Social media workflows, Ad optimization],
+            pricing Starting at $2,500+,
+            icon 📢
+        }
+    ];
+
+    let growthChart;
+
+     --- Initializers ---
+    window.onload = () = {
+        selectService(0);
+        initGrowthChart();
+        calculateROI();
+    };
+
+     --- Form Modal Handling ---
+    function handleFormSubmit(event) {
+        event.preventDefault();
+        const modal = document.getElementById('successModal');
+        modal.classList.remove('hidden');
+        document.getElementById('contactForm').reset();
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('successModal');
+        modal.classList.add('hidden');
+    }
+
+     --- UI Logic ---
+    function selectService(index) {
+        const display = document.getElementById('service-display');
+        const s = services[index];
+        
+         Update Active Button
+        document.querySelectorAll('.service-btn').forEach(btn = btn.classList.remove('service-active'));
+        document.getElementById(`btn-${index}`).classList.add('service-active');
+
+         Render content
+        display.innerHTML = `
+            div class=flex flex-col mdflex-row gap-12
+                div class=mdw-23
+                    div class=text-4xl mb-6${s.icon}div
+                    h3 class=text-2xl font-bold mb-4 text-slate-900${s.title}h3
+                    p class=text-slate-600 mb-8 text-lg${s.desc}p
+                    div class=grid grid-cols-1 smgrid-cols-2 gap-4
+                        ${s.deliverables.map(d = `
+                            div class=flex items-center space-x-3 text-slate-700
+                                span class=text-amber-600✓span
+                                span class=text-sm font-medium${d}span
+                            div
+                        `).join('')}
+                    div
+                div
+                div class=mdw-13 bg-white p-8 rounded-2xl border border-slate-200 flex flex-col justify-center items-center text-center
+                    div class=text-xs font-bold uppercase text-slate-400 mb-2System Investmentdiv
+                    div class=text-3xl font-bold text-slate-900 mb-6${s.pricing}div
+                    a href=#contact class=w-full bg-amber-700 text-white font-bold py-3 rounded-lg hoverbg-amber-800 transition-colorsInquire Nowa
+                    div class=mt-4 text-[10px] text-slate-400 uppercase tracking-widest font-boldOne-time setup + recurring optionsdiv
+                div
+            div
+        `;
+    }
+
+    function calculateROI() {
+        const leads = parseInt(document.getElementById('leads-input').value);
+        const value = parseInt(document.getElementById('value-input').value);
+        
+        document.getElementById('lead-val').innerText = leads;
+        document.getElementById('value-val').innerText = value.toLocaleString();
+
+         Calculations
+        const currentConv = 0.03;  3% manual
+        const aiConv = 0.08;       8% with AI response
+        const hoursPerLead = 0.5;  30 mins saved per lead process
+
+        const extraRevenue = (leads  aiConv  value) - (leads  currentConv  value);
+        const hoursSaved = leads  hoursPerLead  12;
+
+        document.getElementById('roi-hours').innerText = Math.round(hoursSaved);
+        document.getElementById('roi-revenue').innerText = $ + (extraRevenue  1000).toFixed(1) + k;
+    }
+
+     --- Charting Logic ---
+    function initGrowthChart() {
+        const ctx = document.getElementById('growthChart').getContext('2d');
+        growthChart = new Chart(ctx, {
+            type 'line',
+            data {
+                labels ['Mo 1', 'Mo 2', 'Mo 3', 'Mo 4', 'Mo 5', 'Mo 6'],
+                datasets [{
+                    label 'Lead Capture Rate',
+                    data [15, 18, 16, 20, 19, 21],
+                    borderColor '#b45309',
+                    backgroundColor 'rgba(180, 83, 9, 0.1)',
+                    fill true,
+                    tension 0.4,
+                    borderWidth 3,
+                    pointRadius 0
+                }]
+            },
+            options {
+                responsive true,
+                maintainAspectRatio false,
+                scales {
+                    y { 
+                        beginAtZero true, 
+                        grid { color '#f1f5f9' },
+                        ticks { color '#94a3b8', font { size 10 } }
+                    },
+                    x { 
+                        grid { display false },
+                        ticks { color '#94a3b8', font { size 10 } }
+                    }
+                },
+                plugins {
+                    legend { display false },
+                    tooltip {
+                        backgroundColor '#0f172a',
+                        padding 12,
+                        titleFont { family 'Plus Jakarta Sans' }
+                    }
+                }
+            }
+        });
+    }
+
+    function updateGrowthChart(mode) {
+        if(mode === 'manual') {
+            growthChart.data.datasets[0].data = [15, 18, 16, 20, 19, 21];
+            growthChart.data.datasets[0].borderColor = '#94a3b8';
+            growthChart.data.datasets[0].backgroundColor = 'rgba(148, 163, 184, 0.1)';
+        } else {
+            growthChart.data.datasets[0].data = [15, 32, 58, 84, 98, 120];
+            growthChart.data.datasets[0].borderColor = '#b45309';
+            growthChart.data.datasets[0].backgroundColor = 'rgba(180, 83, 9, 0.1)';
+        }
+        growthChart.update();
+    }
+script
+
+body
+html
