@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babak Bayatani AI | AI-Powered Growth Systems</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+        
+        :root {
+            --brand-primary: #0f172a;
+            --brand-accent: #b45309;
+            --bg-neutral: #fdfcfb;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-neutral);
+            color: #1e293b;
+        }
+
+        .mono { font-family: 'JetBrains Mono', monospace; }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+
+        .glass-nav {
+            background: rgba(253, 252, 251, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.5);
+        }
+
+        .card-interaction {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-interaction:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+        }
+
+        .service-active {
+            border-color: var(--brand-accent);
+            background-color: #fffbeb;
+        }
+
+        /* Custom range slider styling */
+        input[type=range] {
+            -webkit-appearance: none;
+            width: 100%;
+            background: transparent;
+        }
+        input[type=range]::-webkit-slider-runnable-track {
+            width: 100%;
+            height: 6px;
+            background: #e2e8f0;
+            border-radius: 3px;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: var(--brand-accent);
+            cursor: pointer;
+            margin-top: -7px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 glass-nav">
+    <div class="max-w-7xl mx-auto px-6 h-18 py-4 flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+            <div class="w-8 h-8 bg-slate-900 rounded flex items-center justify-center text-white font-bold text-xs">BB</div>
+            <span class="font-bold text-lg tracking-tight uppercase">Babak Bayatani <span class="text-amber-700">AI</span></span>
+        </div>
+        <div class="hidden md:flex space-x-8 text-sm font-semibold text-slate-600 items-center">
+            <a href="#services" class="hover:text-amber-700 transition-colors">Services</a>
+            <a href="#case-studies" class="hover:text-amber-700 transition-colors">Results</a>
+            <a href="#about" class="hover:text-amber-700 transition-colors">About</a>
+            <a href="#contact" class="bg-slate-900 text-white px-5 py-2 rounded-full hover:bg-slate-800 transition-all">Free Strategy Call</a>
+        </div>
+    </div>
+</nav>
+
+<main>
+    <!-- HERO SECTION -->
+    <section class="pt-32 pb-20 px-6">
+        <div class="max-w-5xl mx-auto text-center">
+            <div class="inline-flex items-center space-x-2 px-3 py-1 bg-amber-50 border border-amber-100 rounded-full text-amber-800 text-xs font-bold mb-8 uppercase tracking-widest">
+                <span>✦</span> <span>Boutique AI Growth Agency</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold text-slate-900 mb-8 leading-[1.1] tracking-tight">
+                AI-Powered Marketing & Sales Systems That <span class="text-amber-700 italic">Grow Your Business.</span>
+            </h1>
+            <p class="text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+                We help local businesses, agencies, and e-commerce brands generate more leads, automate follow-ups, and increase sales using custom AI-driven systems.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#contact" class="bg-slate-900 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-xl shadow-slate-200 hover:scale-105 transition-transform">
+                    Book Free Strategy Call
+                </a>
+                <a href="#case-studies" class="bg-white border border-slate-200 text-slate-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-50 transition-all">
+                    See Results
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRUST BAR -->
+    <section class="border-y border-slate-100 bg-white py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-3xl font-bold text-slate-900 mb-1">50+</div>
+                    <div class="text-xs font-bold text-slate-400 uppercase tracking-widest">AI Solutions Built</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-slate-900 mb-1">10k+</div>
+                    <div class="text-xs font-bold text-slate-400 uppercase tracking-widest">Leads Generated</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-slate-900 mb-1">24/7</div>
+                    <div class="text-xs font-bold text-slate-400 uppercase tracking-widest">Sales Automation</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-bold text-slate-900 mb-1">90%</div>
+                    <div class="text-xs font-bold text-slate-400 uppercase tracking-widest">Manual Work Reduced</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 1: GROWTH VISUALIZER -->
+    <section id="impact" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">The AI Advantage</h2>
+                    <p class="text-slate-600 mb-8 leading-relaxed">
+                        Traditional marketing systems rely on manual effort and inconsistent follow-ups. Our AI-driven approach creates a compounding growth curve by automating lead qualification and response times.
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center shrink-0">⚡</div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Instant Response</h4>
+                                <p class="text-sm text-slate-500">AI replies to leads in seconds, not hours, increasing conversion rates by up to 391%.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-lg bg-slate-200 text-slate-700 flex items-center justify-center shrink-0">📈</div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">Scalable Outreach</h4>
+                                <p class="text-sm text-slate-500">Handle 1,000+ leads with the same overhead as 10 leads.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="font-bold text-sm uppercase tracking-widest text-slate-400">Projected Efficiency</h3>
+                        <div class="flex space-x-2">
+                            <button onclick="updateGrowthChart('manual')" class="px-3 py-1 text-xs font-bold rounded-full bg-slate-100 text-slate-600">Manual</button>
+                            <button onclick="updateGrowthChart('ai')" class="px-3 py-1 text-xs font-bold rounded-full bg-amber-700 text-white">AI-System</button>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="growthChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: SERVICE MATRIX -->
+    <section id="services" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Our Systems</h2>
+                <p class="text-slate-500 max-w-2xl mx-auto">Click a system below to see specific deliverables and investment tiers.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-4 mb-12">
+                <button onclick="selectService(0)" class="service-btn p-6 rounded-2xl border-2 border-slate-100 text-left transition-all service-active" id="btn-0">
+                    <div class="text-2xl mb-2">🎯</div>
+                    <div class="font-bold">Lead Gen</div>
+                </button>
+                <button onclick="selectService(1)" class="service-btn p-6 rounded-2xl border-2 border-slate-100 text-left transition-all" id="btn-1">
+                    <div class="text-2xl mb-2">🤝</div>
+                    <div class="font-bold">Sales Assistant</div>
+                </button>
+                <button onclick="selectService(2)" class="service-btn p-6 rounded-2xl border-2 border-slate-100 text-left transition-all" id="btn-2">
+                    <div class="text-2xl mb-2">💬</div>
+                    <div class="font-bold">AI Chatbots</div>
+                </button>
+                <button onclick="selectService(3)" class="service-btn p-6 rounded-2xl border-2 border-slate-100 text-left transition-all" id="btn-3">
+                    <div class="text-2xl mb-2">📢</div>
+                    <div class="font-bold">Marketing Auto</div>
+                </button>
+            </div>
+
+            <div class="bg-slate-50 rounded-3xl p-8 md:p-12 border border-slate-100" id="service-display">
+                <!-- Content Injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: ROI CALCULATOR -->
+    <section class="py-24 bg-slate-900 text-white overflow-hidden relative">
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-amber-700/10 blur-[120px]"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold mb-6">Calculate Your AI ROI</h2>
+                    <p class="text-slate-400 mb-10 leading-relaxed">
+                        See how much manual labor you can offset and how many additional leads you can capture by implementing our automated systems.
+                    </p>
+                    <div class="space-y-8">
+                        <div>
+                            <div class="flex justify-between mb-4">
+                                <label class="text-sm font-bold uppercase tracking-widest text-slate-500">Monthly Leads</label>
+                                <span class="text-amber-500 font-mono" id="lead-val">100</span>
+                            </div>
+                            <input type="range" id="leads-input" min="10" max="1000" value="100" class="w-full" oninput="calculateROI()">
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-4">
+                                <label class="text-sm font-bold uppercase tracking-widest text-slate-500">Avg Lead Value ($)</label>
+                                <span class="text-amber-500 font-mono" id="value-val">500</span>
+                            </div>
+                            <input type="range" id="value-input" min="100" max="5000" value="500" step="100" class="w-full" oninput="calculateROI()">
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="bg-white/5 border border-white/10 p-8 rounded-3xl backdrop-blur-md">
+                        <div class="text-slate-500 text-xs font-bold uppercase mb-4">Annual Time Saved</div>
+                        <div class="text-4xl font-bold text-white mb-2" id="roi-hours">420</div>
+                        <div class="text-xs text-slate-400">Hours of manual follow-up</div>
+                    </div>
+                    <div class="bg-amber-700 p-8 rounded-3xl shadow-2xl shadow-amber-900/20">
+                        <div class="text-amber-100 text-xs font-bold uppercase mb-4">Revenue Growth Pot.</div>
+                        <div class="text-4xl font-bold text-white mb-2" id="roi-revenue">$12k</div>
+                        <div class="text-xs text-amber-100/70">From improved response time</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: CASE STUDIES -->
+    <section id="case-studies" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12">Recent Success Stories</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card-interaction bg-slate-50 border border-slate-100 p-8 rounded-3xl">
+                    <div class="text-xs font-bold text-amber-700 uppercase mb-4 tracking-widest">Real Estate</div>
+                    <h3 class="text-xl font-bold mb-4 italic">"Response time from hours to seconds."</h3>
+                    <p class="text-slate-500 text-sm mb-6">Built an AI Assistant for qualification and booking.</p>
+                    <div class="pt-6 border-t border-slate-200">
+                        <div class="text-2xl font-bold text-slate-900">4x</div>
+                        <div class="text-xs text-slate-400 uppercase">Booking Rate Increase</div>
+                    </div>
+                </div>
+                <div class="card-interaction bg-slate-50 border border-slate-100 p-8 rounded-3xl">
+                    <div class="text-xs font-bold text-amber-700 uppercase mb-4 tracking-widest">E-Commerce</div>
+                    <h3 class="text-xl font-bold mb-4 italic">"24/7 Cart Recovery."</h3>
+                    <p class="text-slate-500 text-sm mb-6">AI-driven personalized follow-up sequences.</p>
+                    <div class="pt-6 border-t border-slate-200">
+                        <div class="text-2xl font-bold text-slate-900">22%</div>
+                        <div class="text-xs text-slate-400 uppercase">Recovery Improvement</div>
+                    </div>
+                </div>
+                <div class="card-interaction bg-slate-50 border border-slate-100 p-8 rounded-3xl">
+                    <div class="text-xs font-bold text-amber-700 uppercase mb-4 tracking-widest">Local B2B</div>
+                    <h3 class="text-xl font-bold mb-4 italic">"Automated Prospecting."</h3>
+                    <p class="text-slate-500 text-sm mb-6">Custom lead scrapers and AI outreach flows.</p>
+                    <div class="pt-6 border-t border-slate-200">
+                        <div class="text-2xl font-bold text-slate-900">150+</div>
+                        <div class="text-xs text-slate-400 uppercase">Qualified Leads/Mo</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: ABOUT FOUNDER -->
+    <section id="about" class="py-24 bg-slate-50">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-48 h-48 md:w-64 md:h-64 rounded-full shrink-0 flex items-center justify-center border-4 border-white shadow-xl overflow-hidden relative group bg-gradient-to-tr from-slate-800 to-slate-950">
+                    <!-- Configured high-fidelity portrait with automatic fallback handling -->
+                    <img 
+                        src="photo_2026-05-30_23-06-17.jpg" 
+                        alt="Babak Bayatani" 
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        onerror="this.style.display='none'; document.getElementById('avatar-placeholder').classList.remove('hidden');"
+                    />
+                    <!-- Ultra premium fallback state so the preview looks beautifully polished before the GitHub upload -->
+                    <div id="avatar-placeholder" class="hidden absolute inset-0 flex flex-col items-center justify-center text-white p-4">
+                        <span class="text-4xl font-bold tracking-tight mb-1">BB</span>
+                        <span class="text-[9px] uppercase tracking-widest text-amber-500 font-semibold">Founder</span>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="text-3xl font-bold mb-4">Meet Babak Bayatani</h2>
+                    <p class="text-lg text-slate-700 mb-6 font-medium leading-relaxed font-semibold">
+                        Founder of Babak Bayatani AI. I help businesses implement practical AI solutions that improve marketing, sales, and customer engagement.
+                    </p>
+                    <p class="text-slate-500 mb-8 text-sm leading-relaxed">
+                        My approach isn't about "shiny objects." It's about revenue. We look for the friction in your sales cycle—slow responses, missed follow-ups, manual data entry—and replace it with scalable machine intelligence.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="p-4 bg-white rounded-xl border border-slate-200 flex-1 min-w-[140px]">
+                            <div class="text-xs text-slate-400 uppercase font-bold mb-1">Email Me</div>
+                            <a href="mailto:bbayatani@gmail.com" class="font-bold text-slate-900 hover:text-amber-700 transition-colors text-sm break-all">bbayatani@gmail.com</a>
+                        </div>
+                        <div class="p-4 bg-white rounded-xl border border-slate-200 flex-1 min-w-[140px]">
+                            <div class="text-xs text-slate-400 uppercase font-bold mb-1">Call/WhatsApp</div>
+                            <a href="tel:+989198929660" class="font-bold text-slate-900 hover:text-amber-700 transition-colors text-sm whitespace-nowrap">+98 919 892 9660</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CONTACT SECTION -->
+    <section id="contact" class="py-24 bg-white relative">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-6 italic">Ready to Grow with AI?</h2>
+            <p class="text-slate-500 mb-12">Fill out the form below to book your free AI Strategy Session. We'll identify exactly where you're losing revenue and how to fix it.</p>
+            
+            <div class="bg-slate-50 p-8 md:p-12 rounded-[2rem] border border-slate-100 text-left">
+                <form id="contactForm" onsubmit="handleFormSubmit(event)" class="grid md:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold uppercase tracking-widest text-slate-400 px-1">Name</label>
+                        <input type="text" required class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 outline-none focus:border-amber-700 transition-colors">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold uppercase tracking-widest text-slate-400 px-1">Work Email</label>
+                        <input type="email" required class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 outline-none focus:border-amber-700 transition-colors">
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold uppercase tracking-widest text-slate-400 px-1">Business Type</label>
+                        <select class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 outline-none focus:border-amber-700 transition-colors">
+                            <option>Real Estate</option>
+                            <option>E-Commerce</option>
+                            <option>Coaching/SaaS</option>
+                            <option>Local Service Business</option>
+                        </select>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-xs font-bold uppercase tracking-widest text-slate-400 px-1">Monthly Revenue</label>
+                        <select class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 outline-none focus:border-amber-700 transition-colors">
+                            <option>$5k - $20k</option>
+                            <option>$20k - $100k</option>
+                            <option>$100k+</option>
+                        </select>
+                    </div>
+                    <div class="md:col-span-2 space-y-2">
+                        <label class="text-xs font-bold uppercase tracking-widest text-slate-400 px-1">Biggest Bottleneck</label>
+                        <textarea rows="3" class="w-full bg-white border border-slate-200 rounded-xl px-4 py-3 outline-none focus:border-amber-700 transition-colors" placeholder="What is holding your growth back?"></textarea>
+                    </div>
+                    <div class="md:col-span-2 pt-4">
+                        <button type="submit" class="w-full bg-slate-900 text-white font-bold py-4 rounded-xl hover:bg-slate-800 transition-all shadow-lg shadow-slate-200">
+                            Submit & Book Strategy Session
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Custom Modal Overlay replacing native alert() -->
+                <div id="successModal" class="hidden fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+                    <div class="bg-white rounded-3xl p-8 max-w-md w-full text-center shadow-2xl border border-slate-100">
+                        <div class="w-16 h-16 bg-emerald-100 text-emerald-800 rounded-full flex items-center justify-center text-3xl mx-auto mb-6">✓</div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Strategy Session Requested!</h3>
+                        <p class="text-slate-500 mb-6">Thank you, Babak has received your request and will reach out to you within 24 hours.</p>
+                        <button onclick="closeModal()" class="w-full bg-slate-900 text-white font-bold py-3 rounded-xl hover:bg-slate-800 transition-all">
+                            Back to Portfolio
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="py-12 border-t border-slate-100 bg-white text-slate-500 text-sm">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+        <div class="flex items-center space-x-2">
+            <div class="w-6 h-6 bg-slate-900 rounded flex items-center justify-center text-white font-bold text-[8px]">BB</div>
+            <span class="font-bold uppercase text-slate-900">Babak Bayatani AI</span>
+        </div>
+        <div class="flex flex-col md:flex-row gap-6 text-center md:text-left">
+            <div>
+                <span class="text-xs text-slate-400 block uppercase font-bold tracking-widest mb-1">Direct Line</span>
+                <a href="tel:+989198929660" class="hover:text-amber-700 transition-colors font-medium">+98 919 892 9660</a>
+            </div>
+            <div>
+                <span class="text-xs text-slate-400 block uppercase font-bold tracking-widest mb-1">Inquiries</span>
+                <a href="mailto:bbayatani@gmail.com" class="hover:text-amber-700 transition-colors font-medium">bbayatani@gmail.com</a>
+            </div>
+        </div>
+        <p class="text-xs text-slate-400">© 2026 Babak Bayatani AI. Boutique Revenue Systems.</p>
+    </div>
+</footer>
+
+<script>
+    // --- Data Storage ---
+    const services = [
+        {
+            title: "AI Lead Generation Systems",
+            desc: "Generate qualified leads automatically through high-intent scraping and intelligent outreach.",
+            deliverables: ["Website lead capture", "AI qualification", "Automated outreach", "CRM integration"],
+            pricing: "Starting at $1,500+",
+            icon: "🎯"
+        },
+        {
+            title: "AI Sales Assistants",
+            desc: "A digital sales team that never sleeps, handles objections, and books meetings.",
+            deliverables: ["Lead nurturing", "Appointment booking", "Follow-up automation", "CRM Sync"],
+            pricing: "Starting at $2,000+",
+            icon: "🤝"
+        },
+        {
+            title: "AI Chatbots & Support",
+            desc: "24/7 assistants for your website that answer FAQs and resolve support tickets.",
+            deliverables: ["Website assistant", "FAQ automation", "Knowledge base sync", "Live-handover"],
+            pricing: "Starting at $1,000+",
+            icon: "💬"
+        },
+        {
+            title: "AI Marketing Automation",
+            desc: "End-to-end content and campaign orchestration using generative intelligence.",
+            deliverables: ["Email campaigns", "Content creation", "Social media workflows", "Ad optimization"],
+            pricing: "Starting at $2,500+",
+            icon: "📢"
+        }
+    ];
+
+    let growthChart;
+
+    // --- Initializers ---
+    window.onload = () => {
+        selectService(0);
+        initGrowthChart();
+        calculateROI();
+    };
+
+    // --- Form Modal Handling ---
+    function handleFormSubmit(event) {
+        event.preventDefault();
+        const modal = document.getElementById('successModal');
+        modal.classList.remove('hidden');
+        document.getElementById('contactForm').reset();
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('successModal');
+        modal.classList.add('hidden');
+    }
+
+    // --- UI Logic ---
+    function selectService(index) {
+        const display = document.getElementById('service-display');
+        const s = services[index];
+        
+        // Update Active Button
+        document.querySelectorAll('.service-btn').forEach(btn => btn.classList.remove('service-active'));
+        document.getElementById(`btn-${index}`).classList.add('service-active');
+
+        // Render content
+        display.innerHTML = `
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-2/3">
+                    <div class="text-4xl mb-6">${s.icon}</div>
+                    <h3 class="text-2xl font-bold mb-4 text-slate-900">${s.title}</h3>
+                    <p class="text-slate-600 mb-8 text-lg">${s.desc}</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        ${s.deliverables.map(d => `
+                            <div class="flex items-center space-x-3 text-slate-700">
+                                <span class="text-amber-600">✓</span>
+                                <span class="text-sm font-medium">${d}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+                <div class="md:w-1/3 bg-white p-8 rounded-2xl border border-slate-200 flex flex-col justify-center items-center text-center">
+                    <div class="text-xs font-bold uppercase text-slate-400 mb-2">System Investment</div>
+                    <div class="text-3xl font-bold text-slate-900 mb-6">${s.pricing}</div>
+                    <a href="#contact" class="w-full bg-amber-700 text-white font-bold py-3 rounded-lg hover:bg-amber-800 transition-colors">Inquire Now</a>
+                    <div class="mt-4 text-[10px] text-slate-400 uppercase tracking-widest font-bold">One-time setup + recurring options</div>
+                </div>
+            </div>
+        `;
+    }
+
+    function calculateROI() {
+        const leads = parseInt(document.getElementById('leads-input').value);
+        const value = parseInt(document.getElementById('value-input').value);
+        
+        document.getElementById('lead-val').innerText = leads;
+        document.getElementById('value-val').innerText = value.toLocaleString();
+
+        // Calculations
+        const currentConv = 0.03; // 3% manual
+        const aiConv = 0.08;      // 8% with AI response
+        const hoursPerLead = 0.5; // 30 mins saved per lead process
+
+        const extraRevenue = (leads * aiConv * value) - (leads * currentConv * value);
+        const hoursSaved = leads * hoursPerLead * 12;
+
+        document.getElementById('roi-hours').innerText = Math.round(hoursSaved);
+        document.getElementById('roi-revenue').innerText = "$" + (extraRevenue / 1000).toFixed(1) + "k";
+    }
+
+    // --- Charting Logic ---
+    function initGrowthChart() {
+        const ctx = document.getElementById('growthChart').getContext('2d');
+        growthChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Mo 1', 'Mo 2', 'Mo 3', 'Mo 4', 'Mo 5', 'Mo 6'],
+                datasets: [{
+                    label: 'Lead Capture Rate',
+                    data: [15, 18, 16, 20, 19, 21],
+                    borderColor: '#b45309',
+                    backgroundColor: 'rgba(180, 83, 9, 0.1)',
+                    fill: true,
+                    tension: 0.4,
+                    borderWidth: 3,
+                    pointRadius: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: { 
+                        beginAtZero: true, 
+                        grid: { color: '#f1f5f9' },
+                        ticks: { color: '#94a3b8', font: { size: 10 } }
+                    },
+                    x: { 
+                        grid: { display: false },
+                        ticks: { color: '#94a3b8', font: { size: 10 } }
+                    }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        backgroundColor: '#0f172a',
+                        padding: 12,
+                        titleFont: { family: 'Plus Jakarta Sans' }
+                    }
+                }
+            }
+        });
+    }
+
+    // --- Update Chart ---
+    function updateGrowthChart(mode) {
+        if(mode === 'manual') {
+            growthChart.data.datasets[0].data = [15, 18, 16, 20, 19, 21];
+            growthChart.data.datasets[0].borderColor = '#94a3b8';
+            growthChart.data.datasets[0].backgroundColor = 'rgba(148, 163, 184, 0.1)';
+        } else {
+            growthChart.data.datasets[0].data = [15, 32, 58, 84, 98, 120];
+            growthChart.data.datasets[0].borderColor = '#b45309';
+            growthChart.data.datasets[0].backgroundColor = 'rgba(180, 83, 9, 0.1)';
+        }
+        growthChart.update();
+    }
+</script>
+
+</body>
+</html>
